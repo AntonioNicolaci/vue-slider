@@ -27,7 +27,27 @@ const carouselApp = Vue.createApp({
             imgAttiva: 0,
             classeImgAttiva: 'active',
             thumb: 'thumb',
-
         }
     },
+    methods: {
+        sopra() {
+            if (this.imgAttiva == 0) {
+                this.imgAttiva = this.slides.length - 1;
+            } else {
+                this.imgAttiva--;
+            }
+        },
+        sotto() {
+            if(this.imgAttiva == this.slides.length - 1){
+                this.imgAttiva = 0;
+            } else {
+                this.imgAttiva++;
+            }
+        }
+    }
 }).mount('#app')
+
+// setInterval(() => {
+//     globalImgAttiva++
+//     console.log(globalImgAttiva);
+// }, 3000);
