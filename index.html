@@ -27,8 +27,8 @@
                 </div>
 
                 <div class="thumbs">
-                    <div class="prev" @click="sopra()"></div>
-                    <div class="next" @click="sotto()"></div>
+                    <div class="prev" @click="controlloNumeroImgAttiva(true)"></div>
+                    <div class="next" @click="controlloNumeroImgAttiva(false)"></div>
                     
                     <template v-for="(slide, index) in slides">
                         <div :class="[thumb, index == imgAttiva ? classeImgAttiva :'']">

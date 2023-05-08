@@ -30,24 +30,20 @@ const carouselApp = Vue.createApp({
         }
     },
     methods: {
-        sopra() {
-            if (this.imgAttiva == 0) {
-                this.imgAttiva = this.slides.length - 1;
+        controlloNumeroImgAttiva(sopraSotto) {
+            if (sopraSotto === true){
+                if (this.imgAttiva == 0) {
+                    this.imgAttiva = this.slides.length - 1;
+                } else {
+                    this.imgAttiva --;
+                }
             } else {
-                this.imgAttiva--;
+                if(this.imgAttiva == this.slides.length - 1){
+                    this.imgAttiva = 0;
+                } else {
+                    this.imgAttiva ++;
+                }
             }
         },
-        sotto() {
-            if(this.imgAttiva == this.slides.length - 1){
-                this.imgAttiva = 0;
-            } else {
-                this.imgAttiva++;
-            }
-        }
-    }
+    },
 }).mount('#app')
-
-// setInterval(() => {
-//     globalImgAttiva++
-//     console.log(globalImgAttiva);
-// }, 3000);
